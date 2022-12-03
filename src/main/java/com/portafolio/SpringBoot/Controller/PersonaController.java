@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,7 @@ public class PersonaController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-   /* @DeleteMapping("/delete/{id}")
+   @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         //Validamos si existe el Id
         if(!sPersona.existsById(id))
@@ -39,8 +40,8 @@ public class PersonaController {
         
         sPersona.delete(id);
         
-        return new ResponseEntity(new Message("Experiencia eliminada"), HttpStatus.OK);
-    }*/
+        return new ResponseEntity(new Message("Persona eliminada"), HttpStatus.OK);
+    }
     
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoPersona dtoper) {
