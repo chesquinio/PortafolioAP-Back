@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/personas")
+@RequestMapping("/persona")
 @CrossOrigin(origins = "https://franciswillener-ap.web.app")
 public class PersonaController {
     @Autowired
@@ -43,7 +43,7 @@ public class PersonaController {
         return new ResponseEntity(new Message("Persona eliminada"), HttpStatus.OK);
     }
     
-    @PostMapping("/create")
+    @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody dtoPersona dtoper) {
         if(StringUtils.isBlank(dtoper.getNombre()))
             return new ResponseEntity(new Message("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
