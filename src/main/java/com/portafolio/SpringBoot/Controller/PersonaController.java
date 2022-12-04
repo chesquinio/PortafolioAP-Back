@@ -58,7 +58,6 @@ public class PersonaController {
         return new ResponseEntity(new Message("Persona agregada"), HttpStatus.OK);
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtoper) {
         //Validamos si existe el Id
